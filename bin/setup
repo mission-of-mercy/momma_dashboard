@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Set up the app. Run this script immediately after cloning the codebase.
+
+# Set up Ruby dependencies
+bundle install
+
+# Set up upstream git remote
+git remote add upstream git://github.com/mission-of-mercy/momma_dashboard.git
+
+# Set up config files
+cp config/mom.yml.example config/mom.yml
