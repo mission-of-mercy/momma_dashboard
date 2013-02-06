@@ -1,0 +1,16 @@
+<h1 class="title" data-bind="title"></h1>
+
+<ul>
+  <li data-foreach-item="items">
+    <span class="label" data-bind="item"></span>
+  </li>
+</ul>
+
+<p class="more-info" data-bind="moreinfo | raw"></p>
+
+<p class="updated-at" data-bind="updatedAtMessage"></p>
+
+<audio id='support-alert'>
+  <source src="/assets/alert.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>

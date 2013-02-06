@@ -16,5 +16,9 @@ module Momma
     def self.summary
       get("/summary.json").parsed_response
     end
+
+    def self.support
+      get("/support.json").parsed_response
+    end
   end
 end
