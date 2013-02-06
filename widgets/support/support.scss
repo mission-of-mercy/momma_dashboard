@@ -15,6 +15,10 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 
   &.active {
     background-color: #A53D39;
+
+    .icon-warning-sign, #mute-button {
+      display: inherit;
+    }
   }
 
   .title {
@@ -26,7 +30,7 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
   }
 
   .updated-at {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.4);
   }
 
   ul {
@@ -48,5 +52,27 @@ $moreinfo-color:    rgba(255, 255, 255, 0.7);
 
   #support-alert {
     display: none;
+  }
+
+  .icon-warning-sign {
+    display: none;
+  }
+
+  #mute-button {
+    z-index: 10;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 64px;
+    width: 64px;
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.5);
+    &:hover           { color: rgba(255, 255, 255, 0.85); }
+    i.icon-volume-off { display: none; }
+    &.muted {
+      i.icon-volume-off { display: inherit; }
+      i.icon-volume-up  { display: none; }
+    }
   }
 }
