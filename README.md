@@ -1,6 +1,6 @@
 # Mission of Mercy Management App (momma) Dashboard
 
-**WIP**
+![Admin Dashboard](http://i.imgur.com/evXrBLQ.jpg)
 
 ## TODO
 
