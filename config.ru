@@ -1,7 +1,8 @@
 require 'dashing'
 
 configure do
-  set :auth_token, 'YOUR_AUTH_TOKEN'
+  set :auth_token, ENV['DASHBOARD_AUTH_TOKEN']
+  set :default_dashboard, 'general'
 
   settings.sprockets.append_path 'assets/mp3'
 
