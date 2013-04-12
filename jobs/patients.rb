@@ -1,6 +1,6 @@
 require_relative '../lib/momma/client'
 
-SCHEDULER.every '15s' do |job|
+SCHEDULER.every '15s', allow_overlapping: false do |job|
   patients = Momma::Client.patients
 
   send_event('patients-total',         { current: patients['total'] })
