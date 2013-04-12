@@ -5,7 +5,7 @@ class Dashing.Support extends Dashing.Widget
     @lastCount  = 0
     @muteButton = $('#mute-button')
 
-    @muteButton.click => this.mute()
+    @muteButton.click (e) => this.mute(e)
 
   onData: (data) ->
     currentCount = data.items.length
@@ -21,14 +21,18 @@ class Dashing.Support extends Dashing.Widget
 
   alert: ->
     $(@node).addClass('active')
-    @audio.play() unless @muted
+    unless @muted
+      @audio.load()
+      @audio.play()
   clear: ->
     $(@node).removeClass('active')
 
-  mute: ->
+  mute: (e) ->
     @muted = !@muted
 
     if @muted
       @muteButton.addClass('muted')
     else
       @muteButton.removeClass('muted')
+
+    false
