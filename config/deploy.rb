@@ -13,12 +13,6 @@ set :use_sudo, false
 
 server "172.16.58.128", :app, :web, :db, :primary => true
 
-namespace :deploy do
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "touch #{File.join(current_path,'tmp','restart.txt')}"
-  end
-end
-
 after 'deploy:update_code' do
   { "mom.yml"         => "config/mom.yml" }.
    each do |from, to|
@@ -27,3 +21,7 @@ after 'deploy:update_code' do
 end
 
 after "deploy", "deploy:cleanup"
+
+after "deploy" do
+  run "touch #{File.join(current_path,'tmp','restart.txt')}"
+end
