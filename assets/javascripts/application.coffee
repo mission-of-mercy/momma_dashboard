@@ -20,6 +20,3 @@ Dashing.on 'ready', ->
       widget_margins: Dashing.widget_margins
       widget_base_dimensions: Dashing.widget_base_dimensions
       avoid_overlapped_widgets: !Dashing.customGridsterLayout
-      draggable:
-        stop: Dashing.showGridsterInstructions
-        start: -> Dashing.currentWidgetPositions = Dashing.getWidgetPositions()
