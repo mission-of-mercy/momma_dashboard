@@ -5,6 +5,6 @@ SCHEDULER.every '1m', allow_overlapping: false do |job|
 
   send_event('total-donated', { current: summary["total_donated"] })
   send_event('procedures', { current: summary["procedures"] })
-  send_event('checkouts', { current: summary["checkouts"] })
+  send_event('checkouts', { current: summary["check_outs"] })
   send_event('top-procedures', { items: summary["top_procedures"] })
 end
