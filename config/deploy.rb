@@ -1,3 +1,7 @@
+set :stages, %w[local ri ga]
+set :default_stage, "local"
+
+require 'capistrano/ext/multistage'
 require 'bundler/capistrano'
 
 set :application, "dashboard"
@@ -11,10 +15,9 @@ set :user, "deploy"
 set :deploy_to, "/home/deploy/#{application}"
 set :use_sudo, false
 
-server "172.16.58.128", :app, :web, :db, :primary => true
-
 after 'deploy:update_code' do
-  { "mom.yml"         => "config/mom.yml" }.
+  { "mom.yml"         => "config/mom.yml",
+    "log"             => "log" }.
    each do |from, to|
      run "ln -nfs #{shared_path}/#{from} #{release_path}/#{to}"
    end
@@ -23,5 +26,5 @@ end
 after "deploy", "deploy:cleanup"
 
 after "deploy" do
-  run "touch #{File.join(current_path,'tmp','restart.txt')}"
+  run "sudo restart dashboard"
 end
