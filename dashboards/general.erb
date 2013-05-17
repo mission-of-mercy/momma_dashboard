@@ -5,7 +5,6 @@ $(function() {
 });
 </script>
 
-
 <% content_for(:title) { "Mission of Mercy | General Clinic Stats" } %>
 
 <div class="gridster">
@@ -14,33 +13,36 @@ $(function() {
       <div data-view="Image" data-image="/logo.png" class="logo"></div>
     </li>
 
-    <!-- <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-view="Clock"></div>
-      <i class="icon-time icon-background"></i>
-    </li> -->
-
-    <!-- <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="patients-today" data-view="Number" data-title="Patients Registered Today"></div>
-    </li> -->
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="patients-today" data-view="Number" data-title="Patients Registered" data-moreinfo="For today only"></div>
+    </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="patients-total" data-view="Number" data-title="Patients Registered" data-moreinfo="During the entire clinic"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="checkouts" data-view="Number" data-title="Patients Checked Out" data-moreinfo="During the entire clinic"></div>
+      <div data-id="registrations-per-hour" data-view="Meter" data-title="Registrations per hour" data-min="0" data-max="175"></div>
     </li>
 
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="procedures" data-view="Number" data-title="Procedures Performed" data-moreinfo="During the entire clinic"></div>
-    </li>
-
-    <li data-row="2" data-col="1" data-sizex="1" data-sizey="2">
-      <div data-id="top-procedures" data-view="List" data-title="Top 10 Procedures"></div>
+    <li data-row="2" data-col="1" data-sizex="2" data-sizey="2">
+      <div data-id="top-procedures" data-view="List" data-title="Top 10 Procedures" data-moreinfo="For today only"></div>
     </li>
 
     <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="registrations-per-hour" data-view="Meter" data-title="Registrations per hour" data-min="0" data-max="175"></div>
+      <div data-id="patients-in-clinic" data-view="Number" data-title="Patients in clinic"></div>
+    </li>
+
+    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="checkouts" data-view="Number" data-title="Patients Checked Out" data-moreinfo="During the entire clinic"></div>
+    </li>
+
+    <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="check-outs-per-hour" data-view="Meter" data-title="Check-outs per hour" data-min="0" data-max="150"></div>
+    </li>
+
+    <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="procedures" data-view="Number" data-title="Procedures Performed" data-moreinfo="For today only"></div>
     </li>
 
     <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
