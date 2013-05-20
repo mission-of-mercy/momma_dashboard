@@ -1,4 +1,4 @@
-set :stages, %w[local ri ga]
+set :stages, %w[local ri ga ct]
 set :default_stage, "local"
 
 require 'capistrano/ext/multistage'
