@@ -1,7 +1,10 @@
 <script type='text/javascript'>
-$(function() {
-  Dashing.widget_base_dimensions = [340, 310]
-});
+  $(function() {
+    if(window.location.hash.substring(1) == "ipad")
+      Dashing.widget_base_dimensions = [270, 250]
+    else
+      Dashing.widget_base_dimensions = [340, 310]
+  });
 </script>
 
 <% content_for(:title) { "Mission of Mercy | Systems Administration" } %>
@@ -34,6 +37,10 @@ $(function() {
 
     <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
       <div data-id="support-requests" data-view="Support" data-title="Support Requests"></div>
+    </li>
+
+    <li data-row="3" data-col="1" data-sizex="4" data-sizey="1">
+      <div data-id="treatment-areas" data-view="BarGraph" data-title="Treatment Areas"></div>
     </li>
   </ul>
 </div>
