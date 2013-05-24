@@ -1,0 +1,49 @@
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-color:  #dc5945;
+
+$title-color:       rgba(255, 255, 255, 0.7);
+$moreinfo-color:    rgba(255, 255, 255, 0.3);
+$tick-color:        rgba(0, 0, 0, 0.4);
+
+
+// ----------------------------------------------------------------------------
+// Widget-bar-graph styles
+// ----------------------------------------------------------------------------
+.widget-bar-graph {
+
+  background-color: $background-color;
+  position: relative;
+  vertical-align: top !important;
+
+
+  svg {
+    position: absolute;
+    opacity: 0.4;
+    fill-opacity: 0.9;
+    left: 0px;
+    top: 0px;
+  }
+
+  .title, .value {
+    position: relative;
+    z-index: 99;
+  }
+
+  .title {
+    color: $title-color;
+  }
+
+  .more-info {
+    color: $moreinfo-color;
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+  .domain {
+    display: none;
+  }
+
+}
