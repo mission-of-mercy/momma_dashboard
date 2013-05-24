@@ -1,20 +1,21 @@
 class Dashing.BarGraph extends Dashing.Widget
-  @accessor 'current', ->
-
   ready: ->
     @container = $(@node).parent()
     this._initializeGraph(@get('items')) if @get('items')
 
   onData: (data) ->
     if data.items && @graph
+      this._names(data.items)
       $(data.items).each (i, item) =>
         @graph.series[0].data[i].y = item.count
       @graph.render()
     else if data.items && !@graph
       this._initializeGraph(data.items)
 
+  # Private
+
   _initializeGraph: (items) =>
-    @names = items
+    this._names(items)
     data = this._data(items)
 
     @graph = new Rickshaw.Graph(
@@ -25,11 +26,10 @@ class Dashing.BarGraph extends Dashing.Widget
       series: [data]
     )
 
-    # x_axis = new Rickshaw.Graph.Axis.X(
-    #   graph: @graph
-    #   orientation: 'bottom'
-    #   tickFormat: this._format
-    # )
+    x_axis = new Rickshaw.Graph.Axis.X(
+      graph: @graph
+      tickFormat: this._xAxisLabel
+    )
 
     @graph.renderer.unstack = true
 
@@ -40,9 +40,15 @@ class Dashing.BarGraph extends Dashing.Widget
     data: $.makeArray $(items).map (i, item) =>
       { x: i,  y: item.count }
 
-  _format: (n) =>
-    console.debug n
-    @names[n].name
+  _xAxisLabel: (n) =>
+    @names[n]
+
+  # To center the bar graph label we need to use X.5 coordinates
+  _names: (data) =>
+    @names = {}
+    $(data).each (i, item) =>
+      @names[i + 0.5] = item.name
+      @names[i + 0.5] += " (#{item.count})" if item.count > 0
 
   _width: =>
     (Dashing.widget_base_dimensions[0] * @container.data("sizex")) +
