@@ -21,9 +21,12 @@ $tick-color:        rgba(0, 0, 0, 0.4);
   svg {
     position: absolute;
     opacity: 0.4;
-    fill-opacity: 0.9;
+    fill-opacity: 0.50;
     left: 0px;
     top: 0px;
+    g.x_grid_d3 {
+      display: none;
+    }
   }
 
   .title, .value {
