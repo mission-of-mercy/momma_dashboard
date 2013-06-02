@@ -1,6 +1,6 @@
 require_relative '../lib/momma/client'
 
-SCHEDULER.every '30m', allow_overlapping: false do |job|
+SCHEDULER.every '30s', allow_overlapping: false do |job|
   summary = Momma::Client.summary
 
   send_event('total-donated', { current: summary["total_donated"] })
