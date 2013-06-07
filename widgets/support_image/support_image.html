@@ -1,1 +1,9 @@
-<img data-bind-src="image | prepend '/assets'" data-bind-width="width"/>
+<img class="logo" data-bind-src="image | prepend '/assets'" data-bind-width="width"/>
+
+<ul>
+  <li data-foreach-item="items">
+    <span class="label" data-bind="item"></span>
+  </li>
+</ul>
+
+<i class="icon-warning-sign icon-background"></i>

@@ -11,6 +11,37 @@ $background-color:  #4b4b4b;
   background-color: $background-color;
 
   &.warning {
-     background-color: #A53D39;
+    background-color: #A53D39;
+
+    .icon-warning-sign, #mute-button {
+      display: inherit;
+    }
+
+    img.logo {
+      display: none;
+    }
+  }
+
+  ul {
+    margin: 0 15px;
+    text-align: left;
+    color: rgba(0,0,0,0.75);
+    list-style: none;
+  }
+
+  li {
+    margin-bottom: 5px;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 2em;
+  }
+
+  .icon-warning-sign {
+    display: none;
+    font-size: 342px;
   }
 }
