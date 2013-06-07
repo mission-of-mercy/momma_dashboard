@@ -1,0 +1,25 @@
+<style>
+  html, body { height: 100%; width: 100%; }
+</style>
+<script type='text/javascript'>
+  $(function() {
+    if(window.location.hash.substring(1) == "ipad")
+      Dashing.widget_base_dimensions = [270, 250]
+    else
+      Dashing.widget_base_dimensions = [340, 310]
+
+    $(document).keypress(function(e){
+      if(e.keyCode == 102)
+        document.documentElement.webkitRequestFullScreen();
+    });
+  });
+</script>
+
+<% content_for(:title) { "Mission of Mercy | Support" } %>
+
+<div class="gridster">
+  <ul>
+    <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="support-requests" data-view="Support" data-title="Support Requests"></div>
+    </li>
+</div>
