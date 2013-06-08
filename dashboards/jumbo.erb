@@ -2,12 +2,29 @@
 $(function() {
   Dashing.widget_base_dimensions = [370, 400]
   Dashing.numColumns = 4
+  Batman.Filters.shortenedNumber = function(num){
+    return Batman.Filters.prettyNumber(num.toFixed(0));
+  }
 });
-</script>
 
+
+</script>
+<style>
+  h1.title {
+    font-size: 50px;
+  }
+
+  .widget-meter .title {
+    margin-bottom: 24px;
+  }
+
+  .updated-at, .more-info {
+    display: none;
+  }
+</style>
 <% content_for(:title) { "Mission of Mercy | Jumbotron" } %>
 
-<div class="gridster" style="margin-top: 50px;">
+<div class="gridster">
   <ul>
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
       <div data-id="support-requests" data-view="SupportImage" data-image="/logo.png" class="logo"></div>
@@ -18,7 +35,7 @@ $(function() {
     </li>
 
     <li data-row="1" data-col="4" data-sizex="1" data-sizey="1">
-      <div data-id="patients-in-clinic" data-view="Number" data-title="Patients in clinic"></div>
+    <div data-id="patients-in-clinic" data-view="Number" data-title="Patients in clinic"></div>
     </li>
 
     <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
