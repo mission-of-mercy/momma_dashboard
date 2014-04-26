@@ -8,6 +8,10 @@
     else
       Dashing.widget_base_dimensions = [340, 310]
 
+    Batman.Filters.shortenedNumber = function(num){
+      return Batman.Filters.prettyNumber(num.toFixed(0));
+    }
+
     $(document).keypress(function(e){
       if(e.keyCode == 102)
         document.documentElement.webkitRequestFullScreen();
