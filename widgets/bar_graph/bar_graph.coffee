@@ -9,6 +9,7 @@ class Dashing.BarGraph extends Dashing.Widget
       $(data.items).each (i, item) =>
         @graph.series[0].data[i].y = item.count
       @graph.render()
+      this._overrideStyles()
     else if data.items && !@graph
       this._initializeGraph(data.items)
 
@@ -35,6 +36,8 @@ class Dashing.BarGraph extends Dashing.Widget
 
     @graph.render()
 
+    this._overrideStyles()
+
   _data: (items) ->
     color: '#fff'
     data: $.makeArray $(items).map (i, item) =>
@@ -55,3 +58,7 @@ class Dashing.BarGraph extends Dashing.Widget
      Dashing.widget_margins[0] * 2 * (@container.data("sizex") - 1)
   _height: =>
     (Dashing.widget_base_dimensions[1] * @container.data("sizey"))
+
+  _overrideStyles: ->
+    jQuery('text').css({opacity: '1', fill: '#AE4434'}).attr('y', -15)
+    jQuery('rect').css({opacity: '0.3'})
