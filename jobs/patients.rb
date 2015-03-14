@@ -13,4 +13,5 @@ SCHEDULER.every '15s', allow_overlapping: false do |job|
   send_event('registrations-per-hour', { value: patients['registrations_per_hour'] })
 
   send_event('patients-in-clinic', { current: patients['in_clinic'] })
+  send_event('clinic-close-time', { text: patients['expected_close_time'] })
 end
