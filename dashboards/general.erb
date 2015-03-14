@@ -17,27 +17,31 @@ $(function() {
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="registrations-today" data-view="Number" data-title="Patients Registered" data-moreinfo="For today only"></div>
+      <div data-id="registrations-today" data-view="Number" data-title="Patients Registered Today" data-moreinfo="For today only"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="registrations-total" data-view="Number" data-title="Patients Registered" data-moreinfo="During the entire clinic"></div>
+      <div data-id="registrations-total" data-view="Number" data-title="Total Patients Registered" data-moreinfo="During the entire clinic"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="registrations-per-hour" data-view="Meter" data-title="Registrations per hour" data-min="0" data-max="175"></div>
     </li>
 
-    <li data-row="2" data-col="1" data-sizex="2" data-sizey="2">
-      <div data-id="top-procedures" data-view="List" data-title="Top 10 Procedures" data-moreinfo="For today only"></div>
+    <%# <li data-row="2" data-col="1" data-sizex="2" data-sizey="2"> %>
+    <%#   <div data-id="top-procedures" data-view="List" data-title="Top 10 Procedures" data-moreinfo="For today only"></div> %>
+    <%# </li> %>
+
+    <li data-row="2" data-col="1" data-sizex="2" data-sizey="1">
+      <div data-id="total-donated" data-view="Number" data-title="Donated Dental Care" data-prefix="$" style="background-color: #83C83A;"></div>
     </li>
 
     <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="patients-in-clinic" data-view="Number" data-title="Patients in Clinic"></div>
+      <div data-id="procedures" data-view="Number" data-title="Procedures Performed Today" data-moreinfo="For today only"></div>
     </li>
 
     <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="check-outs-total" data-view="Number" data-title="Patients Checked Out" data-moreinfo="During the entire clinic"></div>
+      <div data-id="check-outs-total" data-view="Number" data-title="Total Patients Checked Out" data-moreinfo="During the entire clinic"></div>
     </li>
 
     <li data-row="2" data-col="1" data-sizex="1" data-sizey="1">
@@ -45,12 +49,13 @@ $(function() {
     </li>
 
     <li data-row="3" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="procedures" data-view="Number" data-title="Procedures Performed" data-moreinfo="For today only"></div>
+      <div data-id="patients-in-clinic" data-view="Number" data-title="Patients in Clinic"></div>
     </li>
 
-    <li data-row="3" data-col="1" data-sizex="2" data-sizey="1">
-      <div data-id="total-donated" data-view="Number" data-title="Donated Dental Care" data-prefix="$" style="background-color: #83C83A;"></div>
+    <li data-row="3" data-col="1" data-sizex="4" data-sizey="1">
+      <div data-id="treatment-areas" data-view="BarGraph" data-title="Treatment Area Assignments"></div>
     </li>
+
 
   </ul>
 </div>
